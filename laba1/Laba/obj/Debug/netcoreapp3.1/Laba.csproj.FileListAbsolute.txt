@@ -1,0 +1,13 @@
+C:\Users\Аня\source\repos\Laba\Laba\bin\Debug\netcoreapp3.1\Laba.exe
+C:\Users\Аня\source\repos\Laba\Laba\bin\Debug\netcoreapp3.1\Laba.deps.json
+C:\Users\Аня\source\repos\Laba\Laba\bin\Debug\netcoreapp3.1\Laba.runtimeconfig.json
+C:\Users\Аня\source\repos\Laba\Laba\bin\Debug\netcoreapp3.1\Laba.runtimeconfig.dev.json
+C:\Users\Аня\source\repos\Laba\Laba\bin\Debug\netcoreapp3.1\Laba.dll
+C:\Users\Аня\source\repos\Laba\Laba\bin\Debug\netcoreapp3.1\Laba.pdb
+C:\Users\Аня\source\repos\Laba\Laba\obj\Debug\netcoreapp3.1\Laba.csprojAssemblyReference.cache
+C:\Users\Аня\source\repos\Laba\Laba\obj\Debug\netcoreapp3.1\Laba.csproj.CoreCompileInputs.cache
+C:\Users\Аня\source\repos\Laba\Laba\obj\Debug\netcoreapp3.1\Laba.AssemblyInfoInputs.cache
+C:\Users\Аня\source\repos\Laba\Laba\obj\Debug\netcoreapp3.1\Laba.AssemblyInfo.cs
+C:\Users\Аня\source\repos\Laba\Laba\obj\Debug\netcoreapp3.1\Laba.dll
+C:\Users\Аня\source\repos\Laba\Laba\obj\Debug\netcoreapp3.1\Laba.pdb
+C:\Users\Аня\source\repos\Laba\Laba\obj\Debug\netcoreapp3.1\Laba.genruntimeconfig.cache
