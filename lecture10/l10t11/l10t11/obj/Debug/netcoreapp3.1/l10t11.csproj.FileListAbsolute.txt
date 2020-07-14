@@ -1,0 +1,13 @@
+C:\Users\Аня\Desktop\CS_course\lecture10\l10t11\l10t11\bin\Debug\netcoreapp3.1\l10t11.exe
+C:\Users\Аня\Desktop\CS_course\lecture10\l10t11\l10t11\bin\Debug\netcoreapp3.1\l10t11.deps.json
+C:\Users\Аня\Desktop\CS_course\lecture10\l10t11\l10t11\bin\Debug\netcoreapp3.1\l10t11.runtimeconfig.json
+C:\Users\Аня\Desktop\CS_course\lecture10\l10t11\l10t11\bin\Debug\netcoreapp3.1\l10t11.runtimeconfig.dev.json
+C:\Users\Аня\Desktop\CS_course\lecture10\l10t11\l10t11\bin\Debug\netcoreapp3.1\l10t11.dll
+C:\Users\Аня\Desktop\CS_course\lecture10\l10t11\l10t11\bin\Debug\netcoreapp3.1\l10t11.pdb
+C:\Users\Аня\Desktop\CS_course\lecture10\l10t11\l10t11\obj\Debug\netcoreapp3.1\l10t11.csprojAssemblyReference.cache
+C:\Users\Аня\Desktop\CS_course\lecture10\l10t11\l10t11\obj\Debug\netcoreapp3.1\l10t11.csproj.CoreCompileInputs.cache
+C:\Users\Аня\Desktop\CS_course\lecture10\l10t11\l10t11\obj\Debug\netcoreapp3.1\l10t11.AssemblyInfoInputs.cache
+C:\Users\Аня\Desktop\CS_course\lecture10\l10t11\l10t11\obj\Debug\netcoreapp3.1\l10t11.AssemblyInfo.cs
+C:\Users\Аня\Desktop\CS_course\lecture10\l10t11\l10t11\obj\Debug\netcoreapp3.1\l10t11.dll
+C:\Users\Аня\Desktop\CS_course\lecture10\l10t11\l10t11\obj\Debug\netcoreapp3.1\l10t11.pdb
+C:\Users\Аня\Desktop\CS_course\lecture10\l10t11\l10t11\obj\Debug\netcoreapp3.1\l10t11.genruntimeconfig.cache
