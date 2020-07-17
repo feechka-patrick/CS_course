@@ -1,0 +1,15 @@
+﻿<Window x:Class="laba2.WindowSearch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:laba2"
+        mc:Ignorable="d"
+        Title="WindowSearch" Height="290.026" Width="802.302">
+	<Grid Margin="0,0,-7,-1.2" Height="262" VerticalAlignment="Top">
+		<TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="57" Margin="45,60,0,0" TextWrapping="Wrap" Text="Создать локальную базу данных угроз или найти на устройстве?" VerticalAlignment="Top" Width="715" FontSize="24"/>
+		<Button x:Name="Create" Content="Создать" Click="Create_Click" HorizontalAlignment="Left" Height="55" Margin="190,142,0,0" VerticalAlignment="Top" Width="178" Background="#FFAFDFE2" FontSize="20"/>
+		<Button x:Name="Create_Copy" Content="Найти" Click="Search_Click" HorizontalAlignment="Left" Height="55" Margin="396,142,0,0" VerticalAlignment="Top" Width="171" Background="#FFAFDFE2" FontSize="20"/>
+
+	</Grid>
+</Window>

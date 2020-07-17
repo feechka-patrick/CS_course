@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace laba2
 {
-    public class ThrowList// : INotifyPropertyChanged // проверка на входые значения
+    public class ThrowList
     {
         public string Id { get; set; }
         public string Name { get; set; }
@@ -30,11 +30,10 @@ namespace laba2
             Integrity = "Нарушение целостности";
             Availability = "Нарушение доступности";
         }
-        //public event PropertyChangedEventHandler PropertyChanged;
-        //public void OnPropertyChanged([CallerMemberName]string prop = "")
-        //{
-        //    if (PropertyChanged != null)
-        //        PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        //}
+
+        public override string ToString()
+        {
+            return Id + " " + Name + " " + Description + " " + Source + " " + ObjectOfInfluence + " " + PrivacyPolicy + " " + Integrity + " " + Availability + " ";
+        }
     }
 }

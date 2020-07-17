@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,10 +24,11 @@ namespace laba2
     /// </summary>
     public partial class MainWindow : Window
     {
-        //string URLxlsx_file = "https://bdu.fstec.ru/files/documents/thrlist.xlsx";
+        string URLxlsx_file = "https://bdu.fstec.ru/files/documents/thrlist.xlsx";
 
         public static List<ThrowList> throws = new List<ThrowList>();
-        public FileInfo xlsx_file;
+        public static FileInfo xlsx_file;
+        public static string folderName;
         public MainWindow()
         {
             InitializeComponent();
@@ -68,10 +70,7 @@ namespace laba2
         private void Button_download_Click(object sender, RoutedEventArgs e) //загрузить
         {
             try
-            {
-                ExcelPackage.LicenseContext = LicenseContext.Commercial;
-                // FileInfo xlsx_file = new FileInfo(@enter_text.Text);
-                xlsx_file = new FileInfo(@"C:\Users\Аня\Desktop\thrlist.xlsx"); 
+            {                
                 throws = ExcelPackageToList(new ExcelPackage(xlsx_file));
                 dataGrid.ItemsSource = throws;
                 dataGrid.IsReadOnly = true;
@@ -84,23 +83,25 @@ namespace laba2
             
         }
 
-        private void find_file_Click(object sender, RoutedEventArgs e)
-        {
-            var dialog = new OpenFileDialog();
-            dialog.Filter = "(*.xlsx)|*.xlsx";
-            dialog.ShowDialog();
-            if (dialog.ShowDialog() == true)
-            {
-               enter_text.Text = dialog.FileName;
-            }
-        }
-
         private void Button_update_Click(object sender, RoutedEventArgs e)  //обновить
         {
             try
             {
-                throws = ExcelPackageToList(new ExcelPackage(xlsx_file));
-                dataGrid.ItemsSource = throws;
+                string path = folderName + "//new_thrlist.xlsx";
+                new WebClient().DownloadFile(URLxlsx_file, path);
+
+                List<ThrowList> _throws = new List<ThrowList>();
+                _throws = ExcelPackageToList(new ExcelPackage(new FileInfo(@path)));
+
+                var update = throws.Except(_throws);
+
+               string message = "";
+               foreach(var s in update)
+                {
+                    message += "\n" + s.ToString();
+                }
+                
+
             }
             catch(Exception ex)
             {
@@ -179,10 +180,7 @@ namespace laba2
             }
             
         }
-        private void Button_change_Click(object sender, RoutedEventArgs e) //изменить
-        {
-            dataGrid.IsReadOnly = false;
-        }
+      
        
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -194,5 +192,9 @@ namespace laba2
 
         }
 
+        private void button_download_test_Click(object sender, RoutedEventArgs e)
+        {
+            new WebClient().DownloadFile(URLxlsx_file, @"C:\Users\Аня\Downloads\\thrlist.xlsx");
+        }
     }
 }
