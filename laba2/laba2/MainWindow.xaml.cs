@@ -87,27 +87,87 @@ namespace laba2
         {
             try
             {
-                string path = folderName + "//new_thrlist.xlsx";
-                new WebClient().DownloadFile(URLxlsx_file, path);
+               folderName = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, xlsx_file.ToString());
+               int index = folderName.LastIndexOf('\\');
+               folderName = folderName.Remove(index);
+               //textBox.Text = index + folderName;
 
-                List<ThrowList> _throws = new List<ThrowList>();
-                _throws = ExcelPackageToList(new ExcelPackage(new FileInfo(@path)));
+               string path = folderName + "//new_thrlist.xlsx";
+               //textBox.Text = path;
 
-                var update = throws.Except(_throws);
+               new WebClient().DownloadFile(URLxlsx_file, path);
+               
 
-               string message = "";
-               foreach(var s in update)
+               List<ThrowList> _throws = new List<ThrowList>();
+               _throws = ExcelPackageToList(new ExcelPackage(new FileInfo(@path)));
+               int count = 0;
+               string message_was = "БЫЛО: \n";
+               string message_become = "СТАЛО: \n";
+
+                if (throws.Count >= _throws.Count)
                 {
-                    message += "\n" + s.ToString();
-                }
-                
+                    for (int i = 0; i < throws.Count; i++)
+                    {
+                        bool change = false;
+                        if (throws[i].Id == _throws[i].Id)
+                        {
+                            if (!Equals(throws[i].Name, _throws[i].Name))
+                            {
+                                change = true;
+                            }
+                            if (!Equals(throws[i].Description , _throws[i].Description))
+                            {
+                                change = true;
+                            }
+                            if (!Equals(throws[i].Source, _throws[i].Source))
+                            {
+                                change = true;
+                            }
+                            if (!Equals(throws[i].ObjectOfInfluence , _throws[i].ObjectOfInfluence))
+                            {
+                                change = true;
+                            }
+                            if (!Equals(throws[i].PrivacyPolicy , _throws[i].PrivacyPolicy))
+                            {
+                                change = true;
+                            }
+                            if (!Equals(throws[i].Integrity , _throws[i].Integrity))
+                            {
+                                change = true;
+                            }
+                            if (!Equals(throws[i].Availability , _throws[i].Availability))
+                            {
+                                change = true;
+                            }
+                        }
 
+                        if (change)
+                        {
+                            count++;
+                            message_was += throws[i].ToString() + '\n';
+                            message_become += _throws[i].ToString() + '\n';
+                        }
+
+                    }
+                }
+               string message = $"Обнаружено {count} изменений\n";
+               if (count != 0) 
+               {
+                    message += message_was + message_become;
+               }
+
+               MessageBox.Show(message, "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+               throws = _throws;
+               File.Delete(xlsx_file.ToString());
+               File.Move(path, xlsx_file.ToString());
+               dataGrid.ItemsSource = throws;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                        return;
+                return;
             }
+
         }
 
         private void Button_save_as_Click(object sender, RoutedEventArgs e) //сохранить как
@@ -180,13 +240,15 @@ namespace laba2
             }
             
         }
-      
-       
+
+
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (dataGrid.SelectedIndex > 0)
+            {
+                MessageBox.Show(dataGrid.SelectedItem.ToString(), "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
-
         private void enter_text_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -195,6 +257,11 @@ namespace laba2
         private void button_download_test_Click(object sender, RoutedEventArgs e)
         {
             new WebClient().DownloadFile(URLxlsx_file, @"C:\Users\Аня\Downloads\\thrlist.xlsx");
+        }
+
+        private void next_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

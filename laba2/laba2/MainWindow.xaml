@@ -10,7 +10,7 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition/>
 		</Grid.ColumnDefinitions>
-		<DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="193" Margin="34,59,0,0" VerticalAlignment="Top" Width="730" SelectionChanged="dataGrid_SelectionChanged" CanUserAddRows="False" AreRowDetailsFrozen="True" MaxColumnWidth="1000" MinColumnWidth="5" AutoGenerateColumns="False" CanUserReorderColumns="False">
+		<DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="338" Margin="34,31,0,0" VerticalAlignment="Top" Width="730" SelectionChanged="dataGrid_SelectionChanged" CanUserAddRows="False" AreRowDetailsFrozen="True" MaxColumnWidth="1000" MinColumnWidth="5" AutoGenerateColumns="False" CanUserReorderColumns="False">
 			<DataGrid.Columns>
 				<DataGridTextColumn Header="Идентификатор угрозы" Binding="{Binding Id}"/>
 				<DataGridTextColumn Header="Наименование угрозы" Binding="{Binding Name}"/>
@@ -22,12 +22,9 @@
 				<DataGridTextColumn Header="Нарушение доступности" Binding="{Binding Availability}"/>-->
 			</DataGrid.Columns>
 		</DataGrid>
-		<Menu x:Name="menu" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="794" Margin="0,0,-3.6,0"/>
-		<Button x:Name="button_save" Content="Сохранить" HorizontalAlignment="Left" Height="37" Margin="424,464,0,0" VerticalAlignment="Top" Width="148" Click="Button_save_Click" FontSize="16"/>
-		<Button x:Name="button_update" Content="Обновить" HorizontalAlignment="Left" Height="37" Margin="228,464,0,0" VerticalAlignment="Top" Width="148" Click="Button_update_Click" FontSize="16" RenderTransformOrigin="-1.576,0.157"/>
+		<Button x:Name="button_update" Content="Обновить" HorizontalAlignment="Left" Height="37" Margin="227,464,0,0" VerticalAlignment="Top" Width="148" Click="Button_update_Click" FontSize="16" RenderTransformOrigin="-1.576,0.157"/>
 		<Button x:Name="button_save_as" Content="Сохранить как" HorizontalAlignment="Left" Height="37" Margin="616,464,0,0" VerticalAlignment="Top" Width="148" Click="Button_save_as_Click" FontSize="16"/>
 		<Button x:Name="button_download_Copy" Content="Загрузить" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="148" Click="Button_download_Click" FontSize="16" Margin="34,464,0,0"/>
-		<TextBox x:Name="textBox" HorizontalAlignment="Left" Height="107" Margin="34,281,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="730"/>
 
 	</Grid>
 </Window>

@@ -33,7 +33,7 @@ namespace laba2
 
         public override string ToString()
         {
-            return Id + " " + Name + " " + Description + " " + Source + " " + ObjectOfInfluence + " " + PrivacyPolicy + " " + Integrity + " " + Availability + " ";
+            return Id + " | " + Name + " | " + Description + " | " + Source + " | " + ObjectOfInfluence + " | " + PrivacyPolicy + " | " + Integrity + " | " + Availability + " | ";
         }
     }
 }
