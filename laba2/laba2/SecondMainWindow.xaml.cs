@@ -14,33 +14,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace laba2
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для SecondMainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SecondMainWindow : Window
     {
-
         string URLxlsx_file = "https://bdu.fstec.ru/files/documents/thrlist.xlsx";
 
-        public static List<ThrowList> throws = new List<ThrowList>();
-        public static FileInfo xlsx_file;
-        public static string folderName;
+        public static List<ThrowList> throws = MainWindow.throws;
+        public static FileInfo xlsx_file = MainWindow.xlsx_file;
+        public static string folderName = MainWindow.folderName;
 
-        public static List<List<ThrowList>> dataThrows = new List<List<ThrowList>>();
-        public static int current = 0;
-        public MainWindow()
+        public static List<List<ThrowList>> dataThrows = MainWindow.dataThrows;
+        public static int current = MainWindow.current;
+        public SecondMainWindow()
         {
             InitializeComponent();
-
-            if (dataThrows.Count != 0)
-            {
-                dataGrid.ItemsSource = dataThrows[current];
-            }
+            dataGrid.ItemsSource = dataThrows[current];
         }
 
         public static List<ThrowList> ExcelPackageToList(ExcelPackage excelPackage) //эксель в лист
@@ -81,8 +75,8 @@ namespace laba2
         public static List<List<ThrowList>> ListToList() // заполнение листа листов
         {
             int page = 17;
-            int dataCount = throws.Count / page ;
-            
+            int dataCount = throws.Count / page;
+
             int currentThrow = 0;
             for (int i = 0; i < dataCount; i++)
             {
@@ -107,14 +101,14 @@ namespace laba2
         }
         private void Button_download_Click(object sender, RoutedEventArgs e) //загрузить
         {
-           
+
             try
             {
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
                 throws = ExcelPackageToList(new ExcelPackage(xlsx_file));
                 dataThrows = ListToList();
-                dataGrid.ItemsSource = dataThrows[0];
+                dataGrid.ItemsSource = dataThrows[current];
                 dataGrid.IsReadOnly = true;
             }
             catch (Exception ex)
@@ -122,29 +116,29 @@ namespace laba2
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            
+
         }
 
         private void Button_update_Click(object sender, RoutedEventArgs e)  //обновить
         {
             try
             {
-               folderName = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, xlsx_file.ToString());
-               int index = folderName.LastIndexOf('\\');
-               folderName = folderName.Remove(index);
-               //textBox.Text = index + folderName;
+                folderName = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, xlsx_file.ToString());
+                int index = folderName.LastIndexOf('\\');
+                folderName = folderName.Remove(index);
+                //textBox.Text = index + folderName;
 
-               string path = folderName + "//new_thrlist.xlsx";
-               //textBox.Text = path;
+                string path = folderName + "//new_thrlist.xlsx";
+                //textBox.Text = path;
 
-               new WebClient().DownloadFile(URLxlsx_file, path);
-               
+                new WebClient().DownloadFile(URLxlsx_file, path);
 
-               List<ThrowList> _throws = new List<ThrowList>();
-               _throws = ExcelPackageToList(new ExcelPackage(new FileInfo(@path)));
-               int count = 0;
-               string message_was = "БЫЛО: \n";
-               string message_become = "СТАЛО: \n";
+
+                List<ThrowList> _throws = new List<ThrowList>();
+                _throws = ExcelPackageToList(new ExcelPackage(new FileInfo(@path)));
+                int count = 0;
+                string message_was = "БЫЛО: \n";
+                string message_become = "СТАЛО: \n";
 
                 if (throws.Count >= _throws.Count)
                 {
@@ -157,7 +151,7 @@ namespace laba2
                             {
                                 change = true;
                             }
-                            if (!Equals(throws[i].Description , _throws[i].Description))
+                            if (!Equals(throws[i].Description, _throws[i].Description))
                             {
                                 change = true;
                             }
@@ -165,19 +159,19 @@ namespace laba2
                             {
                                 change = true;
                             }
-                            if (!Equals(throws[i].ObjectOfInfluence , _throws[i].ObjectOfInfluence))
+                            if (!Equals(throws[i].ObjectOfInfluence, _throws[i].ObjectOfInfluence))
                             {
                                 change = true;
                             }
-                            if (!Equals(throws[i].PrivacyPolicy , _throws[i].PrivacyPolicy))
+                            if (!Equals(throws[i].PrivacyPolicy, _throws[i].PrivacyPolicy))
                             {
                                 change = true;
                             }
-                            if (!Equals(throws[i].Integrity , _throws[i].Integrity))
+                            if (!Equals(throws[i].Integrity, _throws[i].Integrity))
                             {
                                 change = true;
                             }
-                            if (!Equals(throws[i].Availability , _throws[i].Availability))
+                            if (!Equals(throws[i].Availability, _throws[i].Availability))
                             {
                                 change = true;
                             }
@@ -192,18 +186,18 @@ namespace laba2
 
                     }
                 }
-               string message = $"Обнаружено {count} изменений\n";
-               if (count != 0) 
-               {
+                string message = $"Обнаружено {count} изменений\n";
+                if (count != 0)
+                {
                     message += message_was + message_become;
-               }
+                }
 
-               MessageBox.Show(message, "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
-               throws = _throws;
-               File.Delete(xlsx_file.ToString());
-               File.Move(path, xlsx_file.ToString());
-               dataThrows = ListToList();
-               dataGrid.ItemsSource = dataThrows[current];
+                MessageBox.Show(message, "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                throws = _throws;
+                File.Delete(xlsx_file.ToString());
+                File.Move(path, xlsx_file.ToString());
+                dataThrows = ListToList();
+                dataGrid.ItemsSource = dataThrows[current];
             }
             catch (Exception ex)
             {
@@ -224,8 +218,8 @@ namespace laba2
                 {
                     try
                     {
-                    var new_xlsx_file = new FileInfo(dialog.FileName);
-                    ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet");
+                        var new_xlsx_file = new FileInfo(dialog.FileName);
+                        ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet");
 
                         int j = 2;
                         ThrowList title_throw = new ThrowList();
@@ -239,49 +233,31 @@ namespace laba2
                         worksheet.Cells[j, 8].Value = title_throw.Availability;
 
                         int index = 0;
-                    for (int i = 3; i < throws.Count; i++)
-                    {
-                        ThrowList _throw = throws[index];
-                        worksheet.Cells[i, 1].Value = _throw.Id;
-                        worksheet.Cells[i, 2].Value = _throw.Name;
-                        worksheet.Cells[i, 3].Value = _throw.Description;
-                        worksheet.Cells[i, 4].Value = _throw.Source;
-                        worksheet.Cells[i, 5].Value = _throw.ObjectOfInfluence;
-                        worksheet.Cells[i, 6].Value = _throw.PrivacyPolicy;
-                        worksheet.Cells[i, 7].Value = _throw.Integrity;
-                        worksheet.Cells[i, 8].Value = _throw.Availability;
-                        index++;
-                    }
+                        for (int i = 3; i < throws.Count; i++)
+                        {
+                            ThrowList _throw = throws[index];
+                            worksheet.Cells[i, 1].Value = _throw.Id;
+                            worksheet.Cells[i, 2].Value = _throw.Name;
+                            worksheet.Cells[i, 3].Value = _throw.Description;
+                            worksheet.Cells[i, 4].Value = _throw.Source;
+                            worksheet.Cells[i, 5].Value = _throw.ObjectOfInfluence;
+                            worksheet.Cells[i, 6].Value = _throw.PrivacyPolicy;
+                            worksheet.Cells[i, 7].Value = _throw.Integrity;
+                            worksheet.Cells[i, 8].Value = _throw.Availability;
+                            index++;
+                        }
 
-                    
+
                         excelPackage.SaveAs(new_xlsx_file);
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                         return;
                     }
                 }
-                       
+
             }
-        }
-        private void Button_save_Click(object sender, RoutedEventArgs e) // сохранить изменения
-        {
-            dataGrid.IsReadOnly = true;
-            try
-            {
-                using (ExcelPackage excelPackage = new ExcelPackage(xlsx_file))
-                {
-                    ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet");
-                    excelPackage.Save();
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            
         }
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -313,14 +289,13 @@ namespace laba2
                 dataGrid.ItemsSource = dataThrows[current];
             }
         }
-        private void enter_text_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
-
-        private void polno_Click(object sender, RoutedEventArgs e)
+        private void kratko_Click(object sender, RoutedEventArgs e)
         {
-            new SecondMainWindow().Show();
+            MainWindow.throws = throws;
+            MainWindow.dataThrows = dataThrows;
+            MainWindow.current = current;
+            new MainWindow().Show();
             this.Close();
         }
     }

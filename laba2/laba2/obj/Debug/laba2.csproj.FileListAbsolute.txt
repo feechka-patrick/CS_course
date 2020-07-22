@@ -18,3 +18,5 @@ C:\Users\Аня\Desktop\CS_course\laba2\laba2\bin\Debug\EPPlus.xml
 C:\Users\Аня\Desktop\CS_course\laba2\laba2\obj\Debug\laba2.csproj.CopyComplete
 C:\Users\Аня\Desktop\CS_course\laba2\laba2\obj\Debug\WindowSearch.g.cs
 C:\Users\Аня\Desktop\CS_course\laba2\laba2\obj\Debug\WindowSearch.baml
+C:\Users\Аня\Desktop\CS_course\laba2\laba2\obj\Debug\SecondMainWindow.g.cs
+C:\Users\Аня\Desktop\CS_course\laba2\laba2\obj\Debug\SecondMainWindow.baml
