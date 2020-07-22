@@ -25,6 +25,8 @@
 		<Button x:Name="button_update" Content="Обновить" HorizontalAlignment="Left" Height="37" Margin="227,464,0,0" VerticalAlignment="Top" Width="148" Click="Button_update_Click" FontSize="16" RenderTransformOrigin="-1.576,0.157"/>
 		<Button x:Name="button_save_as" Content="Сохранить как" HorizontalAlignment="Left" Height="37" Margin="616,464,0,0" VerticalAlignment="Top" Width="148" Click="Button_save_as_Click" FontSize="16"/>
 		<Button x:Name="button_download_Copy" Content="Загрузить" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="148" Click="Button_download_Click" FontSize="16" Margin="34,464,0,0"/>
+		<Button x:Name="back" Content="Назад" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="148" Click="back_Click" FontSize="16" Margin="34,395,0,0"/>
+		<Button x:Name="next" Content="Вперед" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="148" Click="next_Click" FontSize="16" Margin="616,395,0,0"/>
 
 	</Grid>
 </Window>

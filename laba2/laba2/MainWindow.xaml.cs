@@ -29,12 +29,15 @@ namespace laba2
         public static List<ThrowList> throws = new List<ThrowList>();
         public static FileInfo xlsx_file;
         public static string folderName;
+
+        public static List<List<ThrowList>> dataThrows = new List<List<ThrowList>>();
+        public static int current = 0;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        public static List<ThrowList> ExcelPackageToList(ExcelPackage excelPackage)
+        public static List<ThrowList> ExcelPackageToList(ExcelPackage excelPackage) //эксель в лист
         {
             List<ThrowList> dt = new List<ThrowList>();
             ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets["Sheet"];
@@ -67,12 +70,41 @@ namespace laba2
             }
             return dt;
         }
+
+        public static List<List<ThrowList>> ListToList() // заполнение листа листов
+        {
+            int dataCount = throws.Count / 20 ;
+            
+            int currentThrow = 0;
+            for (int i = 0; i < dataCount; i++)
+            {
+                var s = new List<ThrowList>();
+                for (int j = 0; j < 20; j++, currentThrow++)
+                {
+                    s.Add(throws[currentThrow]);
+                }
+                dataThrows.Add(s);
+            }
+
+            if (throws.Count % 20 != 0)
+            {
+                var s = new List<ThrowList>();
+                for (int j = 0; currentThrow < throws.Count; j++, currentThrow++)
+                {
+                    s.Add(throws[currentThrow]);
+                }
+                dataThrows.Add(s);
+            }
+            return dataThrows;
+        }
         private void Button_download_Click(object sender, RoutedEventArgs e) //загрузить
         {
+           
             try
-            {                
+            {
                 throws = ExcelPackageToList(new ExcelPackage(xlsx_file));
-                dataGrid.ItemsSource = throws;
+                dataThrows = ListToList();
+                dataGrid.ItemsSource = dataThrows[0];
                 dataGrid.IsReadOnly = true;
             }
             catch (Exception ex)
@@ -160,7 +192,8 @@ namespace laba2
                throws = _throws;
                File.Delete(xlsx_file.ToString());
                File.Move(path, xlsx_file.ToString());
-               dataGrid.ItemsSource = throws;
+               dataThrows = ListToList();
+               dataGrid.ItemsSource = dataThrows[current];
             }
             catch (Exception ex)
             {
@@ -241,7 +274,6 @@ namespace laba2
             
         }
 
-
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (dataGrid.SelectedIndex > 0)
@@ -249,17 +281,29 @@ namespace laba2
                 MessageBox.Show(dataGrid.SelectedItem.ToString(), "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
-        private void enter_text_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void button_download_test_Click(object sender, RoutedEventArgs e)
         {
             new WebClient().DownloadFile(URLxlsx_file, @"C:\Users\Аня\Downloads\\thrlist.xlsx");
         }
 
         private void next_Click(object sender, RoutedEventArgs e)
+        {
+            if (current < dataThrows.Count - 1)
+            {
+                current++;
+                dataGrid.ItemsSource = dataThrows[current];
+            }
+        }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            if (current > 0)
+            {
+                current--;
+                dataGrid.ItemsSource = dataThrows[current];
+            }
+        }
+        private void enter_text_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
