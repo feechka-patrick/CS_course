@@ -1,0 +1,13 @@
+C:\Users\Аня\Desktop\CS_course\TheVigenèreCipher\TheVigenèreCipher\bin\Debug\netcoreapp3.1\TheVigenèreCipher.exe
+C:\Users\Аня\Desktop\CS_course\TheVigenèreCipher\TheVigenèreCipher\bin\Debug\netcoreapp3.1\TheVigenèreCipher.deps.json
+C:\Users\Аня\Desktop\CS_course\TheVigenèreCipher\TheVigenèreCipher\bin\Debug\netcoreapp3.1\TheVigenèreCipher.runtimeconfig.json
+C:\Users\Аня\Desktop\CS_course\TheVigenèreCipher\TheVigenèreCipher\bin\Debug\netcoreapp3.1\TheVigenèreCipher.runtimeconfig.dev.json
+C:\Users\Аня\Desktop\CS_course\TheVigenèreCipher\TheVigenèreCipher\bin\Debug\netcoreapp3.1\TheVigenèreCipher.dll
+C:\Users\Аня\Desktop\CS_course\TheVigenèreCipher\TheVigenèreCipher\bin\Debug\netcoreapp3.1\TheVigenèreCipher.pdb
+C:\Users\Аня\Desktop\CS_course\TheVigenèreCipher\TheVigenèreCipher\obj\Debug\netcoreapp3.1\TheVigenèreCipher.csprojAssemblyReference.cache
+C:\Users\Аня\Desktop\CS_course\TheVigenèreCipher\TheVigenèreCipher\obj\Debug\netcoreapp3.1\TheVigenèreCipher.csproj.CoreCompileInputs.cache
+C:\Users\Аня\Desktop\CS_course\TheVigenèreCipher\TheVigenèreCipher\obj\Debug\netcoreapp3.1\TheVigenèreCipher.AssemblyInfoInputs.cache
+C:\Users\Аня\Desktop\CS_course\TheVigenèreCipher\TheVigenèreCipher\obj\Debug\netcoreapp3.1\TheVigenèreCipher.AssemblyInfo.cs
+C:\Users\Аня\Desktop\CS_course\TheVigenèreCipher\TheVigenèreCipher\obj\Debug\netcoreapp3.1\TheVigenèreCipher.dll
+C:\Users\Аня\Desktop\CS_course\TheVigenèreCipher\TheVigenèreCipher\obj\Debug\netcoreapp3.1\TheVigenèreCipher.pdb
+C:\Users\Аня\Desktop\CS_course\TheVigenèreCipher\TheVigenèreCipher\obj\Debug\netcoreapp3.1\TheVigenèreCipher.genruntimeconfig.cache
