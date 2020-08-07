@@ -1,0 +1,13 @@
+C:\Users\Аня\Desktop\CS_course\TheVigenereAlgorithm\TheVigenereAlgorithm\bin\Debug\netcoreapp3.1\TheVigenereAlgorithm.exe
+C:\Users\Аня\Desktop\CS_course\TheVigenereAlgorithm\TheVigenereAlgorithm\bin\Debug\netcoreapp3.1\TheVigenereAlgorithm.deps.json
+C:\Users\Аня\Desktop\CS_course\TheVigenereAlgorithm\TheVigenereAlgorithm\bin\Debug\netcoreapp3.1\TheVigenereAlgorithm.runtimeconfig.json
+C:\Users\Аня\Desktop\CS_course\TheVigenereAlgorithm\TheVigenereAlgorithm\bin\Debug\netcoreapp3.1\TheVigenereAlgorithm.runtimeconfig.dev.json
+C:\Users\Аня\Desktop\CS_course\TheVigenereAlgorithm\TheVigenereAlgorithm\bin\Debug\netcoreapp3.1\TheVigenereAlgorithm.dll
+C:\Users\Аня\Desktop\CS_course\TheVigenereAlgorithm\TheVigenereAlgorithm\bin\Debug\netcoreapp3.1\TheVigenereAlgorithm.pdb
+C:\Users\Аня\Desktop\CS_course\TheVigenereAlgorithm\TheVigenereAlgorithm\obj\Debug\netcoreapp3.1\TheVigenereAlgorithm.csprojAssemblyReference.cache
+C:\Users\Аня\Desktop\CS_course\TheVigenereAlgorithm\TheVigenereAlgorithm\obj\Debug\netcoreapp3.1\TheVigenereAlgorithm.csproj.CoreCompileInputs.cache
+C:\Users\Аня\Desktop\CS_course\TheVigenereAlgorithm\TheVigenereAlgorithm\obj\Debug\netcoreapp3.1\TheVigenereAlgorithm.AssemblyInfoInputs.cache
+C:\Users\Аня\Desktop\CS_course\TheVigenereAlgorithm\TheVigenereAlgorithm\obj\Debug\netcoreapp3.1\TheVigenereAlgorithm.AssemblyInfo.cs
+C:\Users\Аня\Desktop\CS_course\TheVigenereAlgorithm\TheVigenereAlgorithm\obj\Debug\netcoreapp3.1\TheVigenereAlgorithm.dll
+C:\Users\Аня\Desktop\CS_course\TheVigenereAlgorithm\TheVigenereAlgorithm\obj\Debug\netcoreapp3.1\TheVigenereAlgorithm.pdb
+C:\Users\Аня\Desktop\CS_course\TheVigenereAlgorithm\TheVigenereAlgorithm\obj\Debug\netcoreapp3.1\TheVigenereAlgorithm.genruntimeconfig.cache
